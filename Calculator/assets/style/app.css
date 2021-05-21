@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    color: white;
+    background: tomato;
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+#calculator,
+#result {
+    width: 40rem;
+    margin: 2rem auto;
+    border: 1px solid tomato;
+    border-radius: 10px;
+    padding: 1rem;
+    color: tomato;
+    text-align: center;
+    max-width: 90%;
+}
+
+#input-mumber{
+    font-size: 2.5rem;
+    width: 15rem;
+    padding: 0.15rem;
+    margin: auto;
+    display: block;
+    color: tomato;
+    border: 2px solid tomato;
+}
+
+#calculator input:focus {
+    outline: none;
+  }
+
+ #calculator button{
+     background: tomato;
+     color: white;
+     border: 1px solid tomato;
+     padding: 0.9rem;
+     cursor: pointer;
+     font-size: 1.3rem;
+ } 
+
+ #calculator button:focus {
+    outline: none;
+  }
+
+  #calculator button:hover,
+  #calculator button:active{
+      background: black;
+      border-color: black;
+  }
+
+  #calc-actions button {
+    width: 4rem;
+  }
+  
+  #calc-actions {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  #logs,
+  #log {
+      font-size: 1rem;
+      color: gray;
+  }
