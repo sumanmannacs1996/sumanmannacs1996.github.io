@@ -16,7 +16,7 @@ header {
   width: 100%;
   background: #f359e6;
   height: 4rem;
-  padding: 0 2.5rem;
+  padding: 1rem 0.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -69,7 +69,8 @@ input:focus {
   margin: auto;
   margin-bottom: 2rem;
   margin-top: 1rem;
-  width: 300px;
+  width: 334px;
+  text-align: center;
 }
 .modal-content {
   padding: 1rem;
