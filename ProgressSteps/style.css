@@ -18,6 +18,7 @@ body {
 
 .container {
   text-align: center;
+  width: 360px;
 }
 .progres-container {
   display: flex;
