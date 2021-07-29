@@ -41,3 +41,10 @@ PREV.addEventListener('click',()=>{
         update();
     }
 });
+
+
+fetch('https://api.coindcx.com/exchange/ticker').then(res=>{
+                return res.json();
+            }).then(data=>{
+                console.log(data);
+            }).catch(e=>console.log(e));
