@@ -27,7 +27,7 @@ const priceAlert =()=>{
             conclusion.innerHTML =`Waiting for Sell USDT!!`; 
             if(targetPrice <= USDT_PRICE){
                 conclusion.innerHTML =`It's time to Sell USDT!!`;
-                document.getElementById("tada").play();
+                document.getElementById("victory").play();
             }
          }
     }
@@ -51,7 +51,9 @@ let getPrice=()=>{
         USDT_PRICE = (+ data[0].p);
         currentPrice.innerHTML = `Current price of USDT ${data[0].p}`
         priceAlert();
-    })
+    }).catch(e=>{
+		currentPrice.innerHTML =`Hay you are offline!`;
+	})
 }
 
 getPrice();
