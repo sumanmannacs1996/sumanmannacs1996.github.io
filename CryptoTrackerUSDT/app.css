@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: steelblue;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.container {
+  background: white;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+}
+.container .cp {
+  font-size: 30px;
+  line-height: 40px;
+  margin: 50px auto;
+  max-width: 350px;
+}
+
+.target {
+  border-radius: 30px;
+  border-color: steelblue;
+  width: 100px;
+  font-weight: bold;
+}
+
+.target:focus {
+  outline: none;
+}
+
+.controler {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  padding-bottom: 20px;
+}
+
+.buysellswitch {
+  position: relative;
+  width: 90px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.buysellswitch-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.buysellswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #999999;
+  border-radius: 20px;
+}
+.buysellswitch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.buysellswitch-inner:before,
+.buysellswitch-inner:after {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 30px;
+  padding: 0;
+  line-height: 30px;
+  font-size: 14px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+.buysellswitch-inner:before {
+  content: 'BUY';
+  padding-left: 10px;
+  background-color: #3ae451;
+  color: #ffffff;
+}
+.buysellswitch-inner:after {
+  content: 'SELL';
+  padding-right: 10px;
+  background-color: #e94c4c;
+  color: white;
+  text-align: right;
+}
+.buysellswitch-switch {
+  display: block;
+  width: 18px;
+  margin: 6px;
+  background: #ffffff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 56px;
+  border: 2px solid #999999;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
+}
+.buysellswitch-checkbox:checked + .buysellswitch-label .buysellswitch-inner {
+  margin-left: 0;
+}
+.buysellswitch-checkbox:checked + .buysellswitch-label .buysellswitch-switch {
+  right: 0px;
+}
+
+.onoffswitch {
+  position: relative;
+  width: 90px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #999999;
+  border-radius: 20px;
+}
+.onoffswitch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before,
+.onoffswitch-inner:after {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 30px;
+  padding: 0;
+  line-height: 30px;
+  font-size: 14px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+  content: 'ON';
+  padding-left: 10px;
+  background-color: #34a7c1;
+  color: #ffffff;
+}
+.onoffswitch-inner:after {
+  content: 'OFF';
+  padding-right: 10px;
+  background-color: #eeeeee;
+  color: #999999;
+  text-align: right;
+}
+.onoffswitch-switch {
+  display: block;
+  width: 18px;
+  margin: 6px;
+  background: #ffffff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 56px;
+  border: 2px solid #999999;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px;
+}

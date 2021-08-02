@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <script src="app.js" defer></script>
+    <title>USDT and INR</title>
+</head>
+<body>
+    <div class="container">
+        <audio src="sounds/tada.mp3" id="tada"></audio>
+        <div class="cp" id="cp">
+        </div>
+        <div class="controler">
+            <div class="buysellswitch">
+                <input type="checkbox" name="buysellswitch" class="buysellswitch-checkbox" id="mybuysellswitch" tabindex="0" checked>
+                <label class="buysellswitch-label" for="mybuysellswitch">
+                    <span class="buysellswitch-inner"></span>
+                    <span class="buysellswitch-switch"></span>
+                </label>
+            </div>
+            <input type="number" class="target" id="target" placeholder="Taget Price...">
+            <div class="onoffswitch">
+                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
+                <label class="onoffswitch-label" for="myonoffswitch">
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+                </label>
+            </div>
+        </div>
+        <div class="cp" id="conclusion">
+        </div>
+    </div>
+</body>
+</html>
