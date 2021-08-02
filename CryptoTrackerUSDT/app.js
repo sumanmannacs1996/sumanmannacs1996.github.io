@@ -19,7 +19,7 @@ const priceAlert =()=>{
             conclusion.innerHTML =`Waiting for Buy USDT!!`; 
             if(targetPrice >= USDT_PRICE){
                 conclusion.innerHTML =`It's time to Buy USDT!!`;
-                document.getElementById("tada").play();
+                document.getElementById("victory").play();
             }
         }
         else{
