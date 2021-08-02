@@ -9,6 +9,11 @@ OnOff.checked = false;
 
 const priceAlert =()=>{
     if(OnOff.checked){
+        if(document.getElementById('target').value === ''){
+            alert("Please set the target price first!!");
+            OnOff.checked = false;
+            return false;
+        }
         if(BuySell.checked){
             let targetPrice =(+ document.getElementById('target').value); 
             conclusion.innerHTML =`Waiting for Buy USDT!!`; 
