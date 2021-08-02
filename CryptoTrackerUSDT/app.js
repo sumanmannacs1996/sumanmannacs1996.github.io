@@ -31,6 +31,9 @@ const priceAlert =()=>{
             }
          }
     }
+    else{
+        conclusion.innerHTML =``;
+    }
 }
 
 
