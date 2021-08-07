@@ -19,7 +19,7 @@ const priceAlert =()=>{
             conclusion.innerHTML =`Waiting for Buy USDT!!`; 
             if(targetPrice >= USDT_PRICE){
                 conclusion.innerHTML =`It's time to Buy USDT!!`;
-                document.getElementById("victory").play();
+                document.getElementById("tada").play();
             }
         }
         else{
@@ -27,7 +27,7 @@ const priceAlert =()=>{
             conclusion.innerHTML =`Waiting for Sell USDT!!`; 
             if(targetPrice <= USDT_PRICE){
                 conclusion.innerHTML =`It's time to Sell USDT!!`;
-                document.getElementById("victory").play();
+                document.getElementById("tada").play();
             }
          }
     }
@@ -44,16 +44,14 @@ OnOff.addEventListener('click',priceAlert);
 
 
 let getPrice=()=>{
-    fetch('https://public.coindcx.com/market_data/trade_history?pair=I-USDT_INR&limit=1')
+    fetch('https://cors-anywhere.herokuapp.com/https://api.wazirx.com/api/v2/trades?market=usdtinr&limit=1')
     .then(res=>{
         return res.json();
     }).then(data=>{
-        USDT_PRICE = (+ data[0].p);
-        currentPrice.innerHTML = `Current price of USDT ${data[0].p}`
+        USDT_PRICE = (+ data[0].price);
+        currentPrice.innerHTML = `Current price of USDT ${USDT_PRICE}`
         priceAlert();
-    }).catch(e=>{
-		currentPrice.innerHTML =`Hay you are offline!`;
-	})
+    })
 }
 
 getPrice();
