@@ -59,4 +59,4 @@ let getPrice=()=>{
 getPrice();
 setInterval(()=>{
     getPrice();
-},7000);
+},5000);
