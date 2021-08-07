@@ -19,7 +19,7 @@ const priceAlert =()=>{
             conclusion.innerHTML =`Waiting for Buy USDT!!`; 
             if(targetPrice >= USDT_PRICE){
                 conclusion.innerHTML =`It's time to Buy USDT!!`;
-                document.getElementById("tada").play();
+                document.getElementById("victory").play();
             }
         }
         else{
@@ -27,7 +27,7 @@ const priceAlert =()=>{
             conclusion.innerHTML =`Waiting for Sell USDT!!`; 
             if(targetPrice <= USDT_PRICE){
                 conclusion.innerHTML =`It's time to Sell USDT!!`;
-                document.getElementById("tada").play();
+                document.getElementById("victory").play();
             }
          }
     }
@@ -44,7 +44,7 @@ OnOff.addEventListener('click',priceAlert);
 
 
 let getPrice=()=>{
-    fetch("https://cors-anywhere.herokuapp.com/https://api.wazirx.com/api/v2/trades?market=usdtinr&limit=1")
+    fetch('https://cors-anywhere.herokuapp.com/https://api.wazirx.com/api/v2/trades?market=usdtinr&limit=1')
     .then(res=>{
         return res.json();
     }).then(data=>{
