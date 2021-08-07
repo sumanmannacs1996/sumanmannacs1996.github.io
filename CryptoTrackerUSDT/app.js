@@ -44,7 +44,7 @@ OnOff.addEventListener('click',priceAlert);
 
 
 let getPrice=()=>{
-    fetch('https://cors-anywhere.herokuapp.com/https://api.wazirx.com/api/v2/trades?market=usdtinr&limit=1')
+    fetch("https://cors-anywhere.herokuapp.com/https://api.wazirx.com/api/v2/trades?market=usdtinr&limit=1")
     .then(res=>{
         return res.json();
     }).then(data=>{
