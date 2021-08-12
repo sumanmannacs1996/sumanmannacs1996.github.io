@@ -1,6 +1,8 @@
 const currentPrice = document.getElementById('cp');
 const conclusion = document.getElementById('conclusion');
 let USDT_PRICE;
+let COIN1 = prompt("Please enter Coin name", "usdt");
+let COIN2 = prompt("Please enter Currency", "inr");
 
 const BuySell = document.getElementById("mybuysellswitch");
 
@@ -44,12 +46,12 @@ OnOff.addEventListener('click',priceAlert);
 
 
 let getPrice=()=>{
-    fetch('https://cors-anywhere.herokuapp.com/https://api.wazirx.com/api/v2/trades?market=usdtinr&limit=1')
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.wazirx.com/api/v2/trades?market=${COIN1}${COIN2}&limit=1`)
     .then(res=>{
         return res.json();
     }).then(data=>{
         USDT_PRICE = (+ data[0].price);
-        currentPrice.innerHTML = `Current price of USDT ${USDT_PRICE}`
+        currentPrice.innerHTML = `Current price of ${COIN1.toUpperCase()} ${USDT_PRICE} in ${COIN2.toUpperCase()}`
         priceAlert();
     })
 }
