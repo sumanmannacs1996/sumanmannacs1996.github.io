@@ -18,17 +18,17 @@ const priceAlert =()=>{
         }
         if(BuySell.checked){
             let targetPrice =(+ document.getElementById('target').value); 
-            conclusion.innerHTML =`Waiting for Buy USDT!!`; 
+            conclusion.innerHTML =`Waiting for Buy ${COIN1.toUpperCase()}!!`; 
             if(targetPrice >= USDT_PRICE){
-                conclusion.innerHTML =`It's time to Buy USDT!!`;
+                conclusion.innerHTML =`It's time to Buy ${COIN1.toUpperCase()}!!`;
                 document.getElementById("victory").play();
             }
         }
         else{
             let targetPrice =(+ document.getElementById('target').value);
-            conclusion.innerHTML =`Waiting for Sell USDT!!`; 
+            conclusion.innerHTML =`Waiting for Sell ${COIN1.toUpperCase()}!!`; 
             if(targetPrice <= USDT_PRICE){
-                conclusion.innerHTML =`It's time to Sell USDT!!`;
+                conclusion.innerHTML =`It's time to Sell ${COIN1.toUpperCase()}!!`;
                 document.getElementById("victory").play();
             }
          }
@@ -46,11 +46,11 @@ OnOff.addEventListener('click',priceAlert);
 
 
 let getPrice=()=>{
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.wazirx.com/api/v2/trades?market=${COIN1}${COIN2}&limit=1`)
+    fetch(`https://public.coindcx.com/market_data/trade_history?pair=I-${COIN1.toUpperCase()}_${COIN2.toUpperCase()}&limit=1`)
     .then(res=>{
         return res.json();
     }).then(data=>{
-        USDT_PRICE = (+ data[0].price);
+        USDT_PRICE = (+ data[0].p);
         currentPrice.innerHTML = `Current price of ${COIN1.toUpperCase()} ${USDT_PRICE} in ${COIN2.toUpperCase()}`
         priceAlert();
     })
@@ -59,4 +59,4 @@ let getPrice=()=>{
 getPrice();
 setInterval(()=>{
     getPrice();
-},7500);
+},4000);

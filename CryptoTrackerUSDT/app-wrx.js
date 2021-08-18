@@ -1,6 +1,8 @@
 const currentPrice = document.getElementById('cp');
 const conclusion = document.getElementById('conclusion');
 let USDT_PRICE;
+let COIN1 = prompt("Please enter Coin name", "usdt");
+let COIN2 = prompt("Please enter Currency", "inr");
 
 const BuySell = document.getElementById("mybuysellswitch");
 
@@ -16,17 +18,17 @@ const priceAlert =()=>{
         }
         if(BuySell.checked){
             let targetPrice =(+ document.getElementById('target').value); 
-            conclusion.innerHTML =`Waiting for Buy USDT!!`; 
+            conclusion.innerHTML =`Waiting for Buy ${COIN1.toUpperCase()}!!`; 
             if(targetPrice >= USDT_PRICE){
-                conclusion.innerHTML =`It's time to Buy USDT!!`;
+                conclusion.innerHTML =`It's time to Buy ${COIN1.toUpperCase()}!!`;
                 document.getElementById("victory").play();
             }
         }
         else{
             let targetPrice =(+ document.getElementById('target').value);
-            conclusion.innerHTML =`Waiting for Sell USDT!!`; 
+            conclusion.innerHTML =`Waiting for Sell ${COIN1.toUpperCase()}!!`; 
             if(targetPrice <= USDT_PRICE){
-                conclusion.innerHTML =`It's time to Sell USDT!!`;
+                conclusion.innerHTML =`It's time to Sell ${COIN1.toUpperCase()}!!`;
                 document.getElementById("victory").play();
             }
          }
@@ -44,19 +46,17 @@ OnOff.addEventListener('click',priceAlert);
 
 
 let getPrice=()=>{
-    fetch('https://public.coindcx.com/market_data/trade_history?pair=I-USDT_INR&limit=1')
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.wazirx.com/api/v2/trades?market=${COIN1}${COIN2}&limit=1`)
     .then(res=>{
         return res.json();
     }).then(data=>{
-        USDT_PRICE = (+ data[0].p);
-        currentPrice.innerHTML = `Current price of USDT ${data[0].p}`
+        USDT_PRICE = (+ data[0].price);
+        currentPrice.innerHTML = `Current price of ${COIN1.toUpperCase()} ${USDT_PRICE} in ${COIN2.toUpperCase()}`
         priceAlert();
-    }).catch(e=>{
-		currentPrice.innerHTML =`Hay you are offline!`;
-	})
+    })
 }
 
 getPrice();
 setInterval(()=>{
     getPrice();
-},5000);
+},7500);
