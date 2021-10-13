@@ -46,11 +46,11 @@ OnOff.addEventListener('click',priceAlert);
 
 
 let getPrice=()=>{
-    fetch(`https://public.coindcx.com/market_data/trade_history?pair=I-${COIN1.toUpperCase()}_${COIN2.toUpperCase()}&limit=1`)
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.wazirx.com/api/v2/trades?market=${COIN1}${COIN2}&limit=1`)
     .then(res=>{
         return res.json();
     }).then(data=>{
-        USDT_PRICE = (+ data[0].p);
+        USDT_PRICE = (+ data[0].price);
         currentPrice.innerHTML = `Current price of ${COIN1.toUpperCase()} ${USDT_PRICE} in ${COIN2.toUpperCase()}`
         priceAlert();
     })
@@ -59,4 +59,4 @@ let getPrice=()=>{
 getPrice();
 setInterval(()=>{
     getPrice();
-},4000);
+},7500);
